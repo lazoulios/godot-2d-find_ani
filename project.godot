@@ -10,9 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Test"
+config/name="Test Game"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3
 
 [rendering]
 
