@@ -2,6 +2,13 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 
+@onready var animation_tree = $AnimationTree
+@export var starting_direction : Vector2 = Vector2(0,1)
+
+
+func _ready():
+    update_animation_parameters(starting_direction)
+
 func _physics_process(_delta):
     # Get input direction
     var input_direction = Vector2(
@@ -9,8 +16,16 @@ func _physics_process(_delta):
         Input.get_action_strength("down") - Input.get_action_strength("up")
     )
 
+    update_animation_parameters(input_direction)
+
     # Update velocity
     velocity = input_direction * move_speed
 
     # Move and Slide func ises velocity of character body to move character on map
     move_and_slide()
+
+func update_animation_parameters(move_input : Vector2):
+    # Don't change animation parameters if there is no move input
+    if (move_input != Vector2.ZERO):
+        animation_tree.set("parameters/idle/blend_position",move_input)
+        animation_tree.set("parameters/walk/blend_position",move_input)    
