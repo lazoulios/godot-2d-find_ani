@@ -241,18 +241,21 @@ states/walk/position = Vector2(495, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sn2nq"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ffnru"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_sjxfi")]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(0.974192, 1.04547)
 script = ExtResource("1_hx7nj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2.44735e-07, -4.78254)
 texture = ExtResource("1_wg73x")
 hframes = 4
 vframes = 4
 frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.44735e-07, 4.78254)
+position = Vector2(2.44735e-07, 0)
 shape = SubResource("RectangleShape2D_6apn1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -266,5 +269,5 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_bkurw")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(-0.00319999, -0.0145375)
+parameters/idle/blend_position = Vector2(-0.0700086, 0.451152)
 parameters/walk/blend_position = Vector2(0, 0)

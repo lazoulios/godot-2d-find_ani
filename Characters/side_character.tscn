@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://fnawfwjrjciu"]
+
+[ext_resource type="Script" path="res://Characters/side_character.gd" id="1_er2fh"]
+[ext_resource type="Texture2D" uid="uid://cpivethcmwjlk" path="res://Sprites/Mine/Side Character - Purple - Sprites.png" id="1_oqmn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsqiy"]
+size = Vector2(9, 6)
+
+[sub_resource type="Animation" id="Animation_7hiry"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_uaepa"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bexw5"]
+_data = {
+"RESET": SubResource("Animation_7hiry"),
+"idle": SubResource("Animation_uaepa")
+}
+
+[node name="SideCharacter" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_er2fh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -5)
+texture = ExtResource("1_oqmn4")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xsqiy")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bexw5")
+}
