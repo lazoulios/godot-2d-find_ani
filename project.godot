@@ -14,7 +14,7 @@ config/name="Find Ani!"
 config/version="1"
 run/main_scene="res://Levels/game_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/project/icon.png"
 
 [autoload]
 
@@ -28,9 +28,9 @@ general/balloon_path="res://Dialogues/balloon.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
-window/size/borderless=true
+window/size/mode=2
 window/stretch/scale=4.02
+mouse_cursor/custom_image="res://Sprites/project/cursor_resized.png"
 window/layer_5=""
 window/version=""
 
