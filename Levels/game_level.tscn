@@ -1,13 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://cx58maej36ft8"]
+[gd_scene load_steps=18 format=3 uid="uid://cx58maej36ft8"]
 
 [ext_resource type="PackedScene" uid="uid://fnawfwjrjciu" path="res://Characters/side_character.tscn" id="1_4ih8j"]
 [ext_resource type="PackedScene" uid="uid://bwmm632xoket2" path="res://Characters/player.tscn" id="1_515kv"]
 [ext_resource type="Texture2D" uid="uid://ckd2d4ort82fg" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ffxqj"]
+[ext_resource type="PackedScene" uid="uid://c8vmfiblmhqgu" path="res://Helpers/actionable.tscn" id="2_vk38e"]
 [ext_resource type="Texture2D" uid="uid://jbn650qr2jvq" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_tfyms"]
 [ext_resource type="Texture2D" uid="uid://cgrlr33oxnu38" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="4_a85fc"]
 [ext_resource type="Texture2D" uid="uid://bmvj0jcaqq6ws" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_0osas"]
 [ext_resource type="Texture2D" uid="uid://bitsuihf1iucg" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="6_foln0"]
 [ext_resource type="Texture2D" uid="uid://cbumhgyqqd8oo" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="7_2m7il"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqeod"]
+radius = 10.043
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_te8sg"]
 texture = ExtResource("2_ffxqj")
@@ -862,6 +866,11 @@ scale = Vector2(1.09529, 0.965358)
 z_index = 1
 y_sort_enabled = false
 position = Vector2(141.515, 101.517)
+
+[node name="Actionable" parent="SideCharacter" instance=ExtResource("2_vk38e")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideCharacter/Actionable"]
+shape = SubResource("CircleShape2D_uqeod")
 
 [node name="Player" parent="." instance=ExtResource("1_515kv")]
 z_index = 1
