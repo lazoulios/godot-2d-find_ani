@@ -1,4 +1,4 @@
-# TestGodot
+# Find Ani!
  Author: Giorgos Lazaridis. <br />
  First coding project <br />
  Small game with no real purpose in which i ask my gf to be my valentine <br />
